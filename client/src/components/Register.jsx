@@ -95,8 +95,8 @@ export default function Register() {
           alt="YvY App."
         />
         
-        <Grid item xs={12} sm={8} md={6} component={Paper} elevation={10}>
-          <Box
+        <Grid item xs={12} sm={2} md={6} component={Paper} elevation={10}>
+          <Box  
             sx={{
               my: 8,
               mx: 25,
@@ -106,7 +106,7 @@ export default function Register() {
               marginTop: "20%",
             }}
           >
-            <Box component="form" noValidate sx={{ mt: 1, margin: "55px" }}>
+            <Box component="form" noValidate sx={{ mt: 1, margin: "5%" }}>
               <TextField
                 margin="normal"
                 required
@@ -115,7 +115,7 @@ export default function Register() {
                 name="name"
                 autoComplete="name"
                 autoFocus
-                sx={{ marginRight: "15px" }}
+                sx={{ marginRight: "15%" }}
               />
               <TextField
                 margin="normal"
@@ -132,7 +132,7 @@ export default function Register() {
                 label="Correo Electrónico"
                 name="email"
                 autoComplete="email"
-                sx={{ marginRight: "15px" }}
+                sx={{ marginRight: "15%" }}
               />
               <TextField
                 margin="normal"
@@ -149,7 +149,7 @@ export default function Register() {
                 label="Teléfono"
                 name="phone"
                 autoComplete="phone"
-                sx={{ marginRight: "15px" }}
+                sx={{ marginRight: "15%" }}
               />
               <TextField
                 margin="normal"
