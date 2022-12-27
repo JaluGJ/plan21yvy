@@ -132,7 +132,6 @@ export default function Register() {
                 label="Correo Electrónico"
                 name="email"
                 autoComplete="email"
-                autoFocus
                 sx={{ marginRight: "15px" }}
               />
               <TextField
@@ -150,7 +149,6 @@ export default function Register() {
                 label="Teléfono"
                 name="phone"
                 autoComplete="phone"
-                autoFocus
                 sx={{ marginRight: "15px" }}
               />
               <TextField
@@ -169,7 +167,6 @@ export default function Register() {
                 name="confirmPassword"
                 type="password"
                 autoComplete="confirmPassword"
-                autoFocus
                 sx={{ marginRight: "15px" }}
               />
               <Divider />
