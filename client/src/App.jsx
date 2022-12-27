@@ -1,10 +1,10 @@
 import './App.css';
-import Register from './components/Register';
+import AdminFincas from './components/AdminFincas';
 
 function App() {
   return (
     <div className="App">
-      <Register />
+      <AdminFincas />
     </div>
   );
 }
