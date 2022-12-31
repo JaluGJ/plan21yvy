@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Divider } from "@mui/material";
 import logoYvY from "../assets/Logo-final-color-212x300.png";
+import './register.css';
 
 function Copyright(props) {
   return (
@@ -48,20 +49,12 @@ export default function Register() {
             width: "0%",
           }}
         >
-          <Box
-            sx={{
-              textAlign: "center",
-              width: "500px",
-              fontSize: "3em",
-              mx: 25,
-              position: "relative",
-              top: "70%",
-              color: "white",
-            }}
-          >
-            Regístrate y comienza a disfrutar de los beneficios de{" "}
-            <strong>YvY</strong>
-          </Box>
+          <Grid item >
+            <Box className="registerText">
+              Regístrate y comienza a disfrutar de los beneficios de{" "}
+              <strong>YvY</strong>
+            </Box>
+          </Grid>
         </Box>
         <Grid
           style={{ background: "linear-gradient(#CCCCCC, #65CA9B, #65CBCA)" }}
@@ -69,29 +62,13 @@ export default function Register() {
           xs={false}
           sm={false}
           md={6}
-          //   sx={{
-          // backgroundImage: "url(https://source.unsplash.com/random)",
-          // backgroundRepeat: "no-repeat",
-          // backgroundColor: (t) =>
-          //   t.palette.mode === "light"
-          //     ? t.palette.grey[50]
-          //     : t.palette.grey[900],
-          // backgroundSize: "cover",
-          // backgroundPosition: "center",
-          //   }}
         />
         <img
+          className="logoYvY"
           component="img"
           height="300,"
           width="212"
           src={logoYvY}
-          style={{ transform: "scale(0.7)", position: "absolute" }}
-          //   sx={{
-          //     position: "absolute",
-
-          //     maxHeight: { xs: 300, md: 300 },
-          //     maxWidth: { xs: 212, md: 212 },
-          //   }}
           alt="YvY App."
         />
 
@@ -104,30 +81,14 @@ export default function Register() {
           component={Paper}
           elevation={20}
           border={0}
-          // sx={{marginTop: "10%",}}
         >
-          {/* <Box
-            border={2}
-            sx={{              
-              width:"90%",
-              my: "0%",
-              mx: "5%",              
-              marginTop: "10%",              
-            }}
-          > */}
           <Box
             component="form"
-            noValidate
-            sx={{               
-              marginTop: "10%", 
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",                        
-          }}
+            className="formRegister"
+            noValidate            
             // border={2}
           >
-            <Grid  xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
                 margin="normal"
                 required
@@ -147,7 +108,7 @@ export default function Register() {
                 autoComplete="lastName"
               />
             </Grid>
-            <Grid   xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
                 margin="normal"
                 required
@@ -166,7 +127,7 @@ export default function Register() {
                 autoComplete="country"
               />
             </Grid>
-            <Grid   xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
                 margin="normal"
                 required
@@ -185,7 +146,7 @@ export default function Register() {
                 autoComplete="password"
               />
             </Grid>
-            <Grid   xs={12} sm={12} md={12} lg={8} xl={6}>
+            <Grid xs={12} sm={12} md={12} lg={8} xl={6}>
               <TextField
                 margin="normal"
                 required
@@ -215,11 +176,11 @@ export default function Register() {
             >
               Crear cuenta
             </Button>
-            <Grid container >
+            <Grid container>
               <Grid item xs={12} sm={11.5} md={11} lg={11.5} xl={11.5}>
                 <Link href="#" variant="body2" sx={{ marginRight: "5%" }}>
                   ¿Olvidaste tu contraseña?
-                </Link>              
+                </Link>
                 <Link href="#" variant="body2">
                   Inicia Sesión
                 </Link>
@@ -227,7 +188,6 @@ export default function Register() {
             </Grid>
             <Copyright sx={{ mt: 5 }} />
           </Box>
-          {/* </Box> */}
         </Grid>
       </Grid>
     </ThemeProvider>
