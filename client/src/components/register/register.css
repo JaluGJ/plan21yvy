@@ -21,13 +21,13 @@
 }
 
 
-@media only screen and (max-width: 899px) and (min-width: 500px) {}
+/* @media only screen and (max-width: 899px) and (min-width: 500px) {}
 
 @media only screen and (max-width: 1199px) and (min-width: 900px) {}
 
 @media only screen and (max-width: 1321px) and (min-width: 1200px) {}
 
-@media only screen and (max-width: 1365px) and (min-width: 1321px) {}
+@media only screen and (max-width: 1365px) and (min-width: 1321px) {} */
 
 @media only screen and (max-width: 1399px) and (min-width: 1366px) {
     .logoYvY {

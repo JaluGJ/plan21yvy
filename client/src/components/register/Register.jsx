@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Divider } from "@mui/material";
-import logoYvY from "../assets/Logo-final-color-212x300.png";
+import logoYvY from "../../assets/Logo-final-color-212x300.png";
 import './register.css';
 
 function Copyright(props) {
