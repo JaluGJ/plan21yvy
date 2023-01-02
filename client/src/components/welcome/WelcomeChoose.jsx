@@ -5,19 +5,25 @@ import logoYvY from "../../assets/Logo-final-color-212x300.png";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { InputLabel, MenuItem } from "@mui/material";
 // import NavigationBack from "../navigation/NavigationBack";
 
 const WelcomeChoose = (e) => {
   const [option, setOption] = useState("");
   const location = useLocation();
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
   const type = location.state;
-//   const handleClick = () => navigate(-1, { state: { type } });
+  //   const handleClick = () => navigate(-1, { state: { type } });
   const handleChange = (e) => {
     setOption(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const dataChoosed = new FormData(e.currentTarget);
+    console.log(dataChoosed)
+    navigate("/welcome3", {star:{dataChoosed}});
+  }
 
   let cooperativas = [
     {
@@ -85,20 +91,25 @@ const WelcomeChoose = (e) => {
           }}
         >
           <h2>
-            {console.log(type.e.toString())}
             {type.e.toString() === "admin"
               ? "Indicanos a que cooperativa perteneces :"
               : "Indicanos a que organización perteneces :"}
           </h2>
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth className="formChoose">
-              <InputLabel id={type.e.toString() === "admin" ? "labelCoop" : "labelOrg"}>
+              <InputLabel
+                id={type.e.toString() === "admin" ? "labelCoop" : "labelOrg"}
+              >
                 {type.e.toString() === "admin"
                   ? "Elige Cooperativa"
                   : "Elige Organización"}
               </InputLabel>
               <Select
-                id={type.e.toString() === "admin" ? "selectCooperative" : "selectOrganization"}
+                id={
+                  type.e.toString() === "admin"
+                    ? "selectCooperative"
+                    : "selectOrganization"
+                }
                 value={option}
                 label="option"
                 onChange={(e) => handleChange(e)}
@@ -115,7 +126,24 @@ const WelcomeChoose = (e) => {
                       </MenuItem>
                     ))}
               </Select>
-              <Button>✔️</Button>
+              <Box>
+                <Button
+                  type="submit"      
+                  onSubmit={(e) => handleSubmit(e)}            
+                  className="btnChoose"
+                  style={{
+                    backgroundColor:"#65CA93",
+                    marginLeft: "101%",
+                    marginTop: "-15%",
+                    border: "none",
+                    borderRadius:"50%",
+                    padding:"15px", 
+                    transform:"scale(0.7)"                   
+                  }}
+                >
+                  ✔️
+                </Button>
+              </Box>
             </FormControl>
           </Box>
         </Box>
