@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import logoYvY from "../../assets/Logo-final-color-212x300.png";
-// import Button from "@mui/material/Button";
+import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Link, useLocation } from "react-router-dom";
@@ -115,6 +115,7 @@ const WelcomeChoose = (e) => {
                       </MenuItem>
                     ))}
               </Select>
+              <Button>✔️</Button>
             </FormControl>
           </Box>
         </Box>
