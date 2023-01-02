@@ -91,16 +91,14 @@ const WelcomeChoose = (e) => {
               : "Indicanos a que organización perteneces :"}
           </h2>
           <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-              <InputLabel id="labelSelect">
+            <FormControl fullWidth className="formChoose">
+              <InputLabel id={type.e.toString() === "admin" ? "labelCoop" : "labelOrg"}>
                 {type.e.toString() === "admin"
                   ? "Elige Cooperativa"
                   : "Elige Organización"}
               </InputLabel>
               <Select
-                id={
-                  type === "admin" ? "selectCooperative" : "selectOrganization"
-                }
+                id={type.e.toString() === "admin" ? "selectCooperative" : "selectOrganization"}
                 value={option}
                 label="option"
                 onChange={(e) => handleChange(e)}
