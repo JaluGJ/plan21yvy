@@ -11,8 +11,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Divider } from "@mui/material";
-import logoYvY from "../assets/Logo-final-color-212x300.png";
-import './register.css';
+import logoYvY from "../../assets/Logo-final-color-212x300.png";
+import "./register.css";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -39,6 +40,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Register() {
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    navigate("/welcome");
+  };
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -49,7 +54,7 @@ export default function Register() {
             width: "0%",
           }}
         >
-          <Grid item >
+          <Grid item>
             <Box className="registerText">
               Regístrate y comienza a disfrutar de los beneficios de{" "}
               <strong>YvY</strong>
@@ -83,13 +88,15 @@ export default function Register() {
           border={0}
         >
           <Box
+            onSubmit={(e) => handleSubmit(e)}
             component="form"
             className="formRegister"
-            noValidate            
+            noValidate
             // border={2}
           >
-            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
+                className="inputMargin"
                 margin="normal"
                 required
                 id="name"
@@ -108,8 +115,9 @@ export default function Register() {
                 autoComplete="lastName"
               />
             </Grid>
-            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
+                className="inputMargin"
                 margin="normal"
                 required
                 id="email"
@@ -127,8 +135,9 @@ export default function Register() {
                 autoComplete="country"
               />
             </Grid>
-            <Grid xs={12} sm={12} md={12} lg={8} xl={7}>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={7}>
               <TextField
+                className="inputMargin"
                 margin="normal"
                 required
                 id="phone"
@@ -146,8 +155,9 @@ export default function Register() {
                 autoComplete="password"
               />
             </Grid>
-            <Grid xs={12} sm={12} md={12} lg={8} xl={6}>
+            <Grid item xs={12} sm={12} md={12} lg={8} xl={6}>
               <TextField
+                className="inputMargin"
                 margin="normal"
                 required
                 id="confirmPassword"
@@ -164,6 +174,7 @@ export default function Register() {
               label="Mantener la sesión"
             />
             <Divider />
+
             <Button
               type="submit"
               variant="contained"
@@ -176,6 +187,7 @@ export default function Register() {
             >
               Crear cuenta
             </Button>
+
             <Grid container>
               <Grid item xs={12} sm={11.5} md={11} lg={11.5} xl={11.5}>
                 <Link href="#" variant="body2" sx={{ marginRight: "5%" }}>
