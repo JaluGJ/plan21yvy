@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Register />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/welcome2" element={<WelcomeChoose />} />
-          <Route path="/welcome3" element={<WelcomeFinished />} />
+          <Route path="/welcome3" element={<WelcomeFinished />} />          
         </Routes>
       </BrowserRouter>
     </div>

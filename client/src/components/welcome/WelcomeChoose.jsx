@@ -9,21 +9,24 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { InputLabel, MenuItem } from "@mui/material";
 // import NavigationBack from "../navigation/NavigationBack";
 
-const WelcomeChoose = (e) => {
+const WelcomeChoose = () => {
   const [option, setOption] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const type = location.state;
   //   const handleClick = () => navigate(-1, { state: { type } });
+  console.log(option);
   const handleChange = (e) => {
     setOption(e.target.value);
   };
   const handleSubmit = (e) => {
+    // e.preventDefault(); e.target.value) data.get({data: data.get("option")})
     e.preventDefault();
-    const dataChoosed = new FormData(e.currentTarget);
-    console.log(dataChoosed)
-    navigate("/welcome3", {star:{dataChoosed}});
-  }
+    const data = new FormData(e.currentTarget);
+    const optionChoosed = data.get('option');
+    console.log(optionChoosed, "Opción elegida");
+    navigate("/welcome3", {state:{optionChoosed, type}});
+  };
 
   let cooperativas = [
     {
@@ -91,30 +94,34 @@ const WelcomeChoose = (e) => {
           }}
         >
           <h2>
-            {type.e.toString() === "admin"
-              ? "Indicanos a que cooperativa perteneces :"
-              : "Indicanos a que organización perteneces :"}
+          {type.e === "admin"
+            ? "Indicanos a que cooperativa perteneces:"
+            : "Indicanos a que organización perteneces:"}
           </h2>
           <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth className="formChoose">
-              <InputLabel
-                id={type.e.toString() === "admin" ? "labelCoop" : "labelOrg"}
-              >
-                {type.e.toString() === "admin"
+            <FormControl
+              fullWidth
+              className="formChoose"
+              component="form"
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <InputLabel id={type.e === "admin" ? "labelCoop" : "labelOrg"}>
+                {type.e === "admin"
                   ? "Elige Cooperativa"
                   : "Elige Organización"}
               </InputLabel>
               <Select
                 id={
-                  type.e.toString() === "admin"
+                  type.e === "admin"
                     ? "selectCooperative"
                     : "selectOrganization"
                 }
+                name="option"
                 value={option}
                 label="option"
                 onChange={(e) => handleChange(e)}
               >
-                {type.e.toString() === "admin"
+                {type.e === "admin"
                   ? cooperativas.map((c) => (
                       <MenuItem key={c.name} value={c.name}>
                         {c.name}
@@ -126,24 +133,21 @@ const WelcomeChoose = (e) => {
                       </MenuItem>
                     ))}
               </Select>
-              <Box>
-                <Button
-                  type="submit"      
-                  onSubmit={(e) => handleSubmit(e)}            
-                  className="btnChoose"
-                  style={{
-                    backgroundColor:"#65CA93",
-                    marginLeft: "101%",
-                    marginTop: "-15%",
-                    border: "none",
-                    borderRadius:"50%",
-                    padding:"15px", 
-                    transform:"scale(0.7)"                   
-                  }}
-                >
-                  ✔️
-                </Button>
-              </Box>
+              <Button
+                type="submit"
+                className="btnChoose"
+                style={{
+                  backgroundColor: "#65CA93",
+                  marginLeft: "101%",
+                  marginTop: "-10%",
+                  border: "none",
+                  borderRadius: "50%",
+                  padding: "15px",
+                  transform: "scale(0.7)",
+                }}
+              >
+                ✔️
+              </Button>
             </FormControl>
           </Box>
         </Box>
