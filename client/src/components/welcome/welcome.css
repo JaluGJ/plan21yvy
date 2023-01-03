@@ -20,6 +20,9 @@
     .textGrid{
         margin-top: 25% !important;
     }
+    .btnChoose{
+        margin-top: -29% !important;
+    }
 
 }
 @media only screen and (max-width: 600px) and (min-width: 500px){
@@ -39,6 +42,9 @@
     }
     .textGrid{
         margin-top: 40% !important;
+    }
+    .btnChoose{
+        margin-top: -29% !important;
     }
 
 }
@@ -61,6 +67,9 @@
     .textGrid{
         margin-top: 17% !important;
     }
+    .btnChoose{
+        margin-top: -22% !important;
+    }
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 900px) {
@@ -80,6 +89,9 @@
     }
     .textGrid{
         margin-top: 15% !important;
+    }
+    .btnChoose{
+        margin-top: -22% !important;
     }
 }
 
@@ -101,6 +113,9 @@
     .textGrid{
         margin-top: 11% !important;
     }
+    .btnChoose{
+        margin-top: -22% !important;
+    }
 } 
 
 
@@ -120,6 +135,9 @@
         margin: -30px !important;
     }
     .textGrid{
-        margin-top: 12% !important;
+        margin-top: -5% !important;
+    }
+    .btnChoose{
+        margin-top: -22% !important;
     }
 }
