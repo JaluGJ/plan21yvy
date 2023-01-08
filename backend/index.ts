@@ -1,6 +1,8 @@
 import dotenv from "dotenv"
 dotenv.config()
-const { db } = require("./src/db.ts")
+
+const {db} = require("./src/db.ts")
+
 const app = require("./src/app.ts")
 const { PORT } = process.env
 
