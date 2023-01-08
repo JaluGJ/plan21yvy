@@ -3,7 +3,7 @@
         "esModuleInterop": true,
         "module": "commonjs",
         "noImplicitAny": false,
-        "suppressImplicitAnyIndexErrors": true,
+        //"suppressImplicitAnyIndexErrors": true,
         "target": "ES5",
         "strict": true,
         "moduleResolution": "node",
@@ -23,6 +23,7 @@
         "useUnknownInCatchVariables": false,
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
+        //"ignoreDeprecations": "5.0"
     },
     "include": [
         "src/**/*",
@@ -32,5 +33,8 @@
     "exclude": [
         "dist",
         "node_modules"
+    ],
+    "types": [
+        "node"
     ]
 }
