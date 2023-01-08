@@ -10,7 +10,7 @@ const db = new DataSource({
   username:PG_USER,
   password:PG_PASSWORD,
   database:PG_DATABASE,
-  dropSchema: false,
+  dropSchema: true,
 })
 
 module.exports = {
