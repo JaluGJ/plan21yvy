@@ -23,7 +23,7 @@
         "useUnknownInCatchVariables": false,
         "experimentalDecorators": true,
         "strictPropertyInitialization": false,
-        //"ignoreDeprecations": "5.0"
+        "emitDecoratorMetadata": true
     },
     "include": [
         "src/**/*",

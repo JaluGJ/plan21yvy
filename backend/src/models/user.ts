@@ -1,5 +1,5 @@
-import { JoinColumn, OneToOne } from "typeorm"
-import { Country } from "./country"
+import { BaseEntity, JoinColumn, OneToOne } from "typeorm"
+import { Country } from "./Country"
 
 const {Entity, PrimaryGeneratedColumn, Column} = require ("typeorm")
 
